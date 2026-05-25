@@ -1,0 +1,37 @@
+[project]
+name = "music-start"
+version = "0.1.0"
+description = "Find likely start timestamps for local music files."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "librosa>=0.10.2",
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "soundfile>=0.12",
+    "typer>=0.12",
+]
+
+[project.scripts]
+music-start = "music_start.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/music_start"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
