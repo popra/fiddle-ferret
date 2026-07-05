@@ -14,6 +14,7 @@ dependencies = [
 
 [project.scripts]
 music-start = "music_start.cli:app"
+song-lengthen = "song_lengthen.cli:app"
 
 [dependency-groups]
 dev = [
@@ -26,7 +27,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/music_start"]
+packages = ["src/music_start", "src/song_lengthen"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -34,4 +35,3 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py312"
-
